@@ -53,6 +53,90 @@ const featuredResources = [
   }
 ]
 
+const officialResources = [
+  {
+    id: 'official-1',
+    title: '官方认证 AI 工具包',
+    description: '官方推出的 AI 工具开发包，包含完整的 API 接口和最佳实践指南。',
+    author: '官方团队',
+    category: '官方',
+    tags: ['官方认证', '开发工具', '最佳实践'],
+    rating: 5.0,
+    downloads: 5432,
+    views: 8900,
+    uploadDate: '1天前',
+    version: '2.0.0'
+  },
+  {
+    id: 'official-2',
+    title: '企业级安全框架',
+    description: '官方推荐的企业级安全框架，提供完整的权限管理和数据保护方案。',
+    author: '官方安全团队',
+    category: '安全',
+    tags: ['安全', '企业级', '权限管理'],
+    rating: 4.9,
+    downloads: 3210,
+    views: 6500,
+    uploadDate: '2天前',
+    version: '1.5.0'
+  },
+  {
+    id: 'official-3',
+    title: '官方部署模板',
+    description: '官方提供的标准化部署模板，支持一键部署到主流云平台。',
+    author: '官方运维团队',
+    category: '部署',
+    tags: ['部署', '云平台', '自动化'],
+    rating: 4.8,
+    downloads: 2890,
+    views: 5200,
+    uploadDate: '3天前',
+    version: '1.2.0'
+  }
+]
+
+const popularResources = [
+  {
+    id: 'popular-1',
+    title: '智能代码补全工具',
+    description: '基于机器学习的智能代码补全工具，支持多种编程语言和框架。',
+    author: '代码大师',
+    category: '开发工具',
+    tags: ['代码补全', 'AI', '开发效率'],
+    rating: 4.7,
+    downloads: 4321,
+    views: 9800,
+    uploadDate: '1周前',
+    version: '1.8.0'
+  },
+  {
+    id: 'popular-2',
+    title: '自动化测试框架',
+    description: '功能强大的自动化测试框架，支持 UI 测试、API 测试和性能测试。',
+    author: '测试专家',
+    category: '测试',
+    tags: ['自动化测试', 'UI测试', '性能测试'],
+    rating: 4.6,
+    downloads: 3654,
+    views: 8200,
+    uploadDate: '4天前',
+    version: '2.1.0'
+  },
+  {
+    id: 'popular-3',
+    title: '数据分析平台',
+    description: '企业级数据分析平台，提供实时数据处理和可视化分析功能。',
+    author: '数据分析师',
+    category: '数据分析',
+    tags: ['数据分析', '实时处理', '可视化'],
+    rating: 4.5,
+    downloads: 2987,
+    views: 7500,
+    uploadDate: '5天前',
+    version: '3.2.0'
+  }
+]
+
 const recentResources = [
   {
     id: '4',
@@ -167,6 +251,58 @@ export function HomePage({ setCurrentPage }: HomePageProps) {
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {featuredResources.map((resource) => (
+              <ResourceCard
+                key={resource.id}
+                resource={resource}
+                onView={(id) => setCurrentPage('detail')}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Official Resources */}
+      <section className="py-16">
+        <div className="container mx-auto px-4">
+          <div className="flex items-center justify-between mb-8">
+            <div>
+              <h2 className="text-3xl mb-2">官方资源</h2>
+              <p className="text-muted-foreground">官方认证的高质量资源推荐</p>
+            </div>
+            <Button variant="outline" onClick={() => setCurrentPage('browse')}>
+              查看全部
+              <ChevronRight className="ml-2 h-4 w-4" />
+            </Button>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {officialResources.map((resource) => (
+              <ResourceCard
+                key={resource.id}
+                resource={resource}
+                onView={(id) => setCurrentPage('detail')}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Popular Resources */}
+      <section className="py-16">
+        <div className="container mx-auto px-4">
+          <div className="flex items-center justify-between mb-8">
+            <div>
+              <h2 className="text-3xl mb-2">热门资源</h2>
+              <p className="text-muted-foreground">社区最受欢迎的优质资源</p>
+            </div>
+            <Button variant="outline" onClick={() => setCurrentPage('browse')}>
+              查看全部
+              <ChevronRight className="ml-2 h-4 w-4" />
+            </Button>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {popularResources.map((resource) => (
               <ResourceCard
                 key={resource.id}
                 resource={resource}
