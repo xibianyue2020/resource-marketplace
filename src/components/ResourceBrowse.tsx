@@ -1,9 +1,9 @@
 import { useState } from 'react'
-import { Search, Filter, Grid, List, SlidersHorizontal } from 'lucide-react'
+import { Search, Filter, Grid, List, SlidersHorizontal, TrendingUp, Clock, Trophy } from 'lucide-react'
 import { Button } from './ui/button'
 import { Input } from './ui/input'
 import { Badge } from './ui/badge'
-import { Card, CardContent } from './ui/card'
+import { Card, CardContent, CardHeader, CardTitle } from './ui/card'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from './ui/tabs'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/select'
 import { Checkbox } from './ui/checkbox'
@@ -215,6 +215,50 @@ export function ResourceBrowse({ setCurrentPage }: ResourceBrowseProps) {
 
           {/* Main Content */}
           <main className="flex-1">
+            {/* 统计卡片 */}
+            <section className="mb-8">
+              <div className="grid md:grid-cols-3 gap-8">
+                <Card>
+                  <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+                    <CardTitle className="text-sm">热门下载</CardTitle>
+                    <TrendingUp className="h-4 w-4 text-muted-foreground" />
+                  </CardHeader>
+                  <CardContent>
+                    <div className="text-2xl">2,350</div>
+                    <p className="text-xs text-muted-foreground">
+                      +20.1% 较上周
+                    </p>
+                  </CardContent>
+                </Card>
+                
+                <Card>
+                  <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+                    <CardTitle className="text-sm">最新发布</CardTitle>
+                    <Clock className="h-4 w-4 text-muted-foreground" />
+                  </CardHeader>
+                  <CardContent>
+                    <div className="text-2xl">156</div>
+                    <p className="text-xs text-muted-foreground">
+                      本周新增资源
+                    </p>
+                  </CardContent>
+                </Card>
+                
+                <Card>
+                  <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+                    <CardTitle className="text-sm">社区活跃度</CardTitle>
+                    <Trophy className="h-4 w-4 text-muted-foreground" />
+                  </CardHeader>
+                  <CardContent>
+                    <div className="text-2xl">89%</div>
+                    <p className="text-xs text-muted-foreground">
+                      用户满意度
+                    </p>
+                  </CardContent>
+                </Card>
+              </div>
+            </section>
+
             {/* Search and Controls */}
             <div className="space-y-4 mb-8">
               <div className="flex flex-col sm:flex-row gap-4">
