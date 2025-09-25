@@ -133,17 +133,29 @@ export function UploadResource({ setCurrentPage }: UploadResourceProps) {
             <div className="flex items-center space-x-4">
               {[1, 2, 3, 4].map((step) => (
                 <div key={step} className="flex items-center">
-                  <div className={`
-                    flex items-center justify-center w-8 h-8 rounded-full border-2 
-                    ${currentStep >= step 
-                      ? 'bg-primary border-primary text-primary-foreground' 
-                      : 'border-muted-foreground text-muted-foreground'
-                    }
-                  `}>
-                    {currentStep > step ? <Check className="h-4 w-4" /> : step}
+                  <div className="flex flex-col items-center">
+                    <div className={`
+                      flex items-center justify-center w-8 h-8 rounded-full border-2 
+                      ${currentStep >= step 
+                        ? 'bg-primary border-primary text-primary-foreground' 
+                        : 'border-muted-foreground text-muted-foreground'
+                      }
+                    `}>
+                      {currentStep > step ? <Check className="h-4 w-4" /> : step}
+                    </div>
+                    <div className="mt-2 text-xs text-center whitespace-nowrap">
+                      {step === 1 && '上传文件'}
+                      {step === 2 && '资源基本信息'}
+                      {step === 3 && '资源附属信息'}
+                      {step === 4 && '完成提交'}
+                    </div>
                   </div>
                   {step < 4 && (
-                    <div className={`w-12 h-px ${currentStep > step ? 'bg-primary' : 'bg-muted'}`} />
+                    <div className="flex items-center justify-center mx-2" style={{height: '28px', marginTop: '-20px'}}>
+                      <span className={`text-lg ${currentStep > step ? 'text-primary' : 'text-muted-foreground'}`}>
+                        →
+                      </span>
+                    </div>
                   )}
                 </div>
               ))}
