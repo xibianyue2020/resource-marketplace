@@ -1711,7 +1711,7 @@
   }
 
   .py-16 {
-    padding-block: calc(var(--spacing) * 16);
+    padding-block: calc(var(--spacing) * 12);
   }
 
   .pt-0 {
