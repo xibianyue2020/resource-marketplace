@@ -27,7 +27,7 @@ const featuredResources = [
   },
   {
     id: '2',
-    title: '数据分析 Prompt 模板库',
+    title: '数据分析 提示词',
     description: '包含100+精选数据分析提示词，涵盖报表生成、趋势分析、预测建模等场景。',
     author: '数据专家',
     category: 'Prompt',

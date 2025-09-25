@@ -16,10 +16,8 @@ interface ResourceBrowseProps {
 const categories = [
   { id: 'all', name: '全部资源', count: 1250 },
   { id: 'mcp', name: 'MCP 连接器', count: 342 },
-  { id: 'prompt', name: 'Prompt 模板', count: 456 },
-  { id: 'dify', name: 'Dify 应用', count: 234 },
-  { id: 'system', name: '系统资源', count: 156 },
-  { id: 'workflow', name: '工作流模板', count: 62 }
+  { id: 'prompt', name: '提示词', count: 456 },
+  { id: 'dify', name: 'Dify 应用', count: 234 }
 ]
 
 const tags = [
@@ -45,7 +43,7 @@ const mockResources = [
   },
   {
     id: '2',
-    title: '数据分析 Prompt 模板库',
+    title: '数据分析 提示词',
     description: '包含100+精选数据分析提示词，涵盖报表生成、趋势分析、预测建模等场景。',
     author: '数据专家',
     category: 'Prompt',

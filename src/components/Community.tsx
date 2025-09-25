@@ -24,7 +24,7 @@ const leaderboards = {
   ],
   resources: [
     { rank: 1, title: 'AI 智能客服 MCP 连接器', author: 'AI开发者', downloads: 5600, rating: 4.9, category: 'MCP' },
-    { rank: 2, title: '数据分析 Prompt 模板库', author: '数据专家', downloads: 4200, rating: 4.8, category: 'Prompt' },
+    { rank: 2, title: '数据分析 提示词', author: '数据专家', downloads: 4200, rating: 4.8, category: 'Prompt' },
     { rank: 3, title: 'Dify 企业级工作流', author: '企业架构师', downloads: 3800, rating: 4.7, category: 'Dify应用' },
     { rank: 4, title: '代码审查助手', author: '代码大师', downloads: 3200, rating: 4.6, category: 'MCP' },
     { rank: 5, title: '营销文案生成器', author: '营销专家', downloads: 2900, rating: 4.5, category: 'Prompt' }

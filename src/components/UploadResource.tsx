@@ -16,10 +16,8 @@ interface UploadResourceProps {
 
 const categories = [
   { value: 'mcp', label: 'MCP 连接器' },
-  { value: 'prompt', label: 'Prompt 模板' },
+  { value: 'prompt', label: '提示词' },
   { value: 'dify', label: 'Dify 应用' },
-  { value: 'system', label: '系统资源' },
-  { value: 'workflow', label: '工作流模板' }
 ]
 
 const suggestedTags = [
