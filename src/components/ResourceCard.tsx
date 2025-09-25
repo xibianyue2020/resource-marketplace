@@ -4,6 +4,7 @@ import { Badge } from './ui/badge'
 import { Button } from './ui/button'
 import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar'
 import { ImageWithFallback } from './figma/ImageWithFallback'
+import { useState } from 'react'
 
 interface ResourceCardProps {
   resource: {
@@ -43,12 +44,15 @@ export function ResourceCard({ resource, onView }: ResourceCardProps) {
     version
   } = resource
 
+  const [isFavorited, setIsFavorited] = useState(false)
+
   const handleCardClick = () => {
     onView?.(id)
   }
 
   const handleHeartClick = (e: React.MouseEvent) => {
     e.stopPropagation() // 防止点击收藏按钮时触发卡片点击
+    setIsFavorited(!isFavorited) // 切换收藏状态
     // 这里可以添加收藏逻辑
   }
 
@@ -148,7 +152,7 @@ export function ResourceCard({ resource, onView }: ResourceCardProps) {
               className="h-8 w-8 hover:bg-transparent"
               onClick={handleHeartClick}
             >
-              <Heart className="h-4 w-4" />
+              <Heart className={`h-4 w-4 ${isFavorited ? 'fill-red-500 text-red-500' : 'text-muted-foreground'}`} />
             </Button>
           </div>
         </div>
