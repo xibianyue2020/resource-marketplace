@@ -30,7 +30,7 @@ const leaderboards = {
     { rank: 5, title: '营销文案生成器', author: '营销专家', downloads: 2900, rating: 4.5, category: 'Prompt' }
   ],
   nodes: [
-    { rank: 1, name: '北京节点', syncCount: 1250, uptime: 99.9, lastSync: '2分钟前', status: 'healthy' },
+    { rank: 1, name: '南京节点', syncCount: 1250, uptime: 99.9, lastSync: '2分钟前', status: 'healthy' },
     { rank: 2, name: '上海节点', syncCount: 1180, uptime: 99.7, lastSync: '3分钟前', status: 'healthy' },
     { rank: 3, name: '深圳节点', syncCount: 950, uptime: 98.8, lastSync: '5分钟前', status: 'warning' },
     { rank: 4, name: '广州节点', syncCount: 840, uptime: 99.2, lastSync: '1分钟前', status: 'healthy' },

@@ -63,7 +63,7 @@ const pendingResources = [
 const syncLogs = [
   {
     id: '1',
-    node: '北京节点',
+    node: '南京节点',
     type: 'auto',
     status: 'success',
     startTime: '2024-01-20 14:30:00',
@@ -364,7 +364,7 @@ export function AdminPanel({ setCurrentPage }: AdminPanelProps) {
 
             {/* 节点状态 */}
             <div className="grid md:grid-cols-3 gap-6">
-              {['北京节点', '上海节点', '深圳节点'].map((node, index) => (
+              {['南京节点', '上海节点', '深圳节点'].map((node, index) => (
                 <Card key={node}>
                   <CardHeader>
                     <CardTitle className="flex items-center justify-between">
@@ -523,7 +523,7 @@ export function AdminPanel({ setCurrentPage }: AdminPanelProps) {
                 <div className="space-y-2 max-h-64 overflow-y-auto">
                   {[
                     { time: '14:35:23', level: 'INFO', message: '用户 "开发者123" 上传资源成功' },
-                    { time: '14:32:15', level: 'SUCCESS', message: '北京节点同步完成' },
+                    { time: '14:32:15', level: 'SUCCESS', message: '南京节点同步完成' },
                     { time: '14:30:45', level: 'WARNING', message: '深圳节点连接超时' },
                     { time: '14:28:12', level: 'INFO', message: '审核员通过资源 "AI客服工具"' },
                     { time: '14:25:33', level: 'ERROR', message: '备份任务失败' },
