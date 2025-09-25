@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Search, Filter, Grid, List, SlidersHorizontal, TrendingUp, Clock, Trophy } from 'lucide-react'
+import { Search, Filter, Grid, List, SlidersHorizontal, TrendingUp, Clock, Star } from 'lucide-react'
 import { Button } from './ui/button'
 import { Input } from './ui/input'
 import { Badge } from './ui/badge'
@@ -41,7 +41,7 @@ const mockResources = [
     isFeatured: true,
     uploadDate: '2天前',
     version: '2.1.0',
-    thumbnail: 'https://images.unsplash.com/photo-1531535807748-218331acbcb4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0ZWFtJTIwY29sbGFib3JhdGlvbiUyMHRlY2hub2xvZ3l8ZW58MXx8fHwxNzU4NjcxNTc2fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral'
+    thumbnail: '/src/images/AI.jpg'
   },
   {
     id: '2',
@@ -54,7 +54,8 @@ const mockResources = [
     downloads: 890,
     views: 3200,
     uploadDate: '5天前',
-    version: '1.3.2'
+    version: '1.3.2',
+    thumbnail: '/src/images/data-analytics.jpg'
   },
   {
     id: '3',
@@ -67,7 +68,8 @@ const mockResources = [
     downloads: 567,
     views: 2100,
     uploadDate: '1周前',
-    version: '3.0.1'
+    version: '3.0.1',
+    thumbnail: '/src/images/coding-workflow.jpg'
   },
   {
     id: '4',
@@ -80,7 +82,8 @@ const mockResources = [
     downloads: 342,
     views: 1200,
     uploadDate: '1天前',
-    version: '1.0.5'
+    version: '1.0.5',
+    thumbnail: '/src/images/computer.jpg'
   },
   {
     id: '5',
@@ -93,7 +96,8 @@ const mockResources = [
     downloads: 298,
     views: 890,
     uploadDate: '3天前',
-    version: '2.2.0'
+    version: '2.2.0',
+    thumbnail: '/src/images/creative-design.jpg'
   },
   {
     id: '6',
@@ -106,7 +110,8 @@ const mockResources = [
     downloads: 234,
     views: 567,
     uploadDate: '1周前',
-    version: '1.2.3'
+    version: '1.2.3',
+    thumbnail: '/src/images/MCP.jpg'
   }
 ]
 
@@ -247,105 +252,80 @@ export function ResourceBrowse({ setCurrentPage }: ResourceBrowseProps) {
                 <Card>
                   <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                     <CardTitle className="text-sm">精选资源新增</CardTitle>
-                    <Trophy className="h-4 w-4 text-muted-foreground" />
+                    <Star className="h-4 w-4 text-muted-foreground" />
                   </CardHeader>
                   <CardContent>
-                    <div className="text-2xl">89</div>
+                    <div className="text-2xl">24</div>
                     <p className="text-xs text-muted-foreground">
-                      本周新增精选资源
+                      本周精选推荐
                     </p>
                   </CardContent>
                 </Card>
               </div>
             </section>
 
-            {/* Search and Controls */}
-            <div className="space-y-4 mb-8">
-              <div className="flex flex-col sm:flex-row gap-4">
-                <div className="flex-1 relative">
-                  <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
-                  <Input
-                    placeholder="搜索资源..."
-                    value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
-                    className="pl-10"
+            {/* 工具栏 */}
+            <section className="mb-6">
+              <Card>
+                <CardContent className="p-6">
+                  <div className="flex flex-col md:flex-row gap-4">
+                    <div className="flex-1">
+                      <div className="relative">
+                        <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+                        <Input
+                          placeholder="搜索资源..."
+                          className="pl-10"
+                          value={searchQuery}
+                          onChange={(e) => setSearchQuery(e.target.value)}
+                        />
+                      </div>
+                    </div>
+                    
+                    <div className="flex gap-2">
+                      <Select value={sortBy} onValueChange={setSortBy}>
+                        <SelectTrigger className="w-40">
+                          <SelectValue placeholder="排序方式" />
+                        </SelectTrigger>
+                        <SelectContent>
+                          <SelectItem value="downloads">下载量</SelectItem>
+                          <SelectItem value="rating">评分</SelectItem>
+                          <SelectItem value="views">浏览量</SelectItem>
+                          <SelectItem value="date">发布时间</SelectItem>
+                        </SelectContent>
+                      </Select>
+                      
+                      <Button
+                        variant="outline"
+                        size="icon"
+                        onClick={() => setViewMode(viewMode === 'grid' ? 'list' : 'grid')}
+                      >
+                        {viewMode === 'grid' ? <List className="h-4 w-4" /> : <Grid className="h-4 w-4" />}
+                      </Button>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </section>
+
+            {/* 资源列表 */}
+            <section>
+              <div className="flex items-center justify-between mb-4">
+                <h2 className="text-2xl">资源列表</h2>
+                <Badge variant="outline">
+                  {filteredResources.length} 个结果
+                </Badge>
+              </div>
+              
+              <div className={viewMode === 'grid' ? 'grid md:grid-cols-2 lg:grid-cols-3 gap-6' : 'space-y-4'}>
+                {filteredResources.map((resource) => (
+                  <ResourceCard
+                    key={resource.id}
+                    resource={resource}
+                    onView={(id) => setCurrentPage('detail')}
                   />
-                </div>
-                <Button variant="outline">
-                  <Filter className="mr-2 h-4 w-4" />
-                  高级筛选
-                </Button>
+                ))}
               </div>
-
-              <div className="flex items-center justify-between">
-                <div className="flex items-center space-x-4">
-                  <span className="text-sm text-muted-foreground">
-                    找到 {filteredResources.length} 个资源
-                  </span>
-                  
-                  <Select value={sortBy} onValueChange={setSortBy}>
-                    <SelectTrigger className="w-48">
-                      <SelectValue />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="downloads">下载量</SelectItem>
-                      <SelectItem value="rating">评分</SelectItem>
-                      <SelectItem value="date">发布时间</SelectItem>
-                      <SelectItem value="views">浏览量</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
-
-                <div className="flex items-center space-x-2">
-                  <Button
-                    variant={viewMode === 'grid' ? 'default' : 'outline'}
-                    size="icon"
-                    onClick={() => setViewMode('grid')}
-                  >
-                    <Grid className="h-4 w-4" />
-                  </Button>
-                  <Button
-                    variant={viewMode === 'list' ? 'default' : 'outline'}
-                    size="icon"
-                    onClick={() => setViewMode('list')}
-                  >
-                    <List className="h-4 w-4" />
-                  </Button>
-                </div>
-              </div>
-            </div>
-
-            {/* Resources Grid */}
-            <div className={`grid gap-6 ${
-              viewMode === 'grid' 
-                ? 'md:grid-cols-2 xl:grid-cols-3' 
-                : 'grid-cols-1'
-            }`}>
-              {filteredResources.map((resource) => (
-                <ResourceCard
-                  key={resource.id}
-                  resource={resource}
-                  onView={(id) => setCurrentPage('detail')}
-                />
-              ))}
-            </div>
-
-            {/* Pagination */}
-            <div className="flex items-center justify-center mt-12">
-              <div className="flex items-center space-x-2">
-                <Button variant="outline" disabled>
-                  上一页
-                </Button>
-                <Button variant="default">1</Button>
-                <Button variant="outline">2</Button>
-                <Button variant="outline">3</Button>
-                <span className="px-2">...</span>
-                <Button variant="outline">10</Button>
-                <Button variant="outline">
-                  下一页
-                </Button>
-              </div>
-            </div>
+            </section>
           </main>
         </div>
       </div>

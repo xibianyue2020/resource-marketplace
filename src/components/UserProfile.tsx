@@ -109,7 +109,7 @@ const favoriteResources = [
     uploadDate: '1周前',
     version: '3.2.1',
     favoriteDate: '3天前',
-    thumbnail: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=300'
+    thumbnail: '/src/images/data-analytics.jpg'
   },
   {
     id: '102',
@@ -124,7 +124,7 @@ const favoriteResources = [
     uploadDate: '3天前',
     version: '2.0.3',
     favoriteDate: '2天前',
-    thumbnail: 'https://images.unsplash.com/photo-1455390582262-044cdead277a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=300'
+    thumbnail: '/src/images/AI.jpg'
   },
   {
     id: '103',
@@ -139,7 +139,7 @@ const favoriteResources = [
     uploadDate: '5天前',
     version: '1.5.2',
     favoriteDate: '1天前',
-    thumbnail: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=300'
+    thumbnail: '/src/images/MCP.jpg'
   },
   {
     id: '104',
@@ -154,7 +154,7 @@ const favoriteResources = [
     uploadDate: '1周前',
     version: '2.1.0',
     favoriteDate: '5天前',
-    thumbnail: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=300'
+    thumbnail: '/src/images/computer.jpg'
   },
   {
     id: '105',
@@ -169,7 +169,7 @@ const favoriteResources = [
     uploadDate: '4天前',
     version: '1.8.3',
     favoriteDate: '6天前',
-    thumbnail: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=300'
+    thumbnail: '/src/images/creative-design.jpg'
   }
 ]
 

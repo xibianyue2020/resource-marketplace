@@ -23,7 +23,7 @@ const featuredResources = [
     isFeatured: true,
     uploadDate: '2天前',
     version: '2.1.0',
-    thumbnail: 'https://images.unsplash.com/photo-1531535807748-218331acbcb4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0ZWFtJTIwY29sbGFib3JhdGlvbiUyMHRlY2hub2xvZ3l8ZW58MXx8fHwxNzU4NjcxNTc2fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral'
+    thumbnail: '/src/images/AI.jpg'
   },
   {
     id: '2',
@@ -36,7 +36,8 @@ const featuredResources = [
     downloads: 890,
     views: 3200,
     uploadDate: '5天前',
-    version: '1.3.2'
+    version: '1.3.2',
+    thumbnail: '/src/images/data-analytics.jpg'
   },
   {
     id: '3',
@@ -49,7 +50,8 @@ const featuredResources = [
     downloads: 567,
     views: 2100,
     uploadDate: '1周前',
-    version: '3.0.1'
+    version: '3.0.1',
+    thumbnail: '/src/images/coding-workflow.jpg'
   }
 ]
 
@@ -65,7 +67,8 @@ const officialResources = [
     downloads: 5432,
     views: 8900,
     uploadDate: '1天前',
-    version: '2.0.0'
+    version: '2.0.0',
+    thumbnail: '/src/images/banner.jpg'
   },
   {
     id: 'official-2',
@@ -78,7 +81,8 @@ const officialResources = [
     downloads: 3210,
     views: 6500,
     uploadDate: '2天前',
-    version: '1.5.0'
+    version: '1.5.0',
+    thumbnail: '/src/images/computer.jpg'
   },
   {
     id: 'official-3',
@@ -91,7 +95,8 @@ const officialResources = [
     downloads: 2890,
     views: 5200,
     uploadDate: '3天前',
-    version: '1.2.0'
+    version: '1.2.0',
+    thumbnail: '/src/images/coding-workflow.jpg'
   }
 ]
 
@@ -107,7 +112,8 @@ const popularResources = [
     downloads: 4321,
     views: 9800,
     uploadDate: '1周前',
-    version: '1.8.0'
+    version: '1.8.0',
+    thumbnail: '/src/images/coding-workflow.jpg'
   },
   {
     id: 'popular-2',
@@ -120,7 +126,8 @@ const popularResources = [
     downloads: 3654,
     views: 8200,
     uploadDate: '4天前',
-    version: '2.1.0'
+    version: '2.1.0',
+    thumbnail: '/src/images/MCP.jpg'
   },
   {
     id: 'popular-3',
@@ -133,7 +140,8 @@ const popularResources = [
     downloads: 2987,
     views: 7500,
     uploadDate: '5天前',
-    version: '3.2.0'
+    version: '3.2.0',
+    thumbnail: '/src/images/data-analytics.jpg'
   }
 ]
 
@@ -149,7 +157,8 @@ const recentResources = [
     downloads: 342,
     views: 1200,
     uploadDate: '1天前',
-    version: '1.0.5'
+    version: '1.0.5',
+    thumbnail: '/src/images/computer.jpg'
   },
   {
     id: '5',
@@ -162,7 +171,8 @@ const recentResources = [
     downloads: 298,
     views: 890,
     uploadDate: '3天前',
-    version: '2.2.0'
+    version: '2.2.0',
+    thumbnail: '/src/images/creative-design.jpg'
   }
 ]
 
@@ -223,7 +233,7 @@ export function HomePage({ setCurrentPage }: HomePageProps) {
             <div className="relative">
               <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                 <ImageWithFallback
-                  src="https://images.unsplash.com/photo-1696041754237-e0c1ffd10138?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkaWdpdGFsJTIwbWFya2V0cGxhY2UlMjB0ZWNobm9sb2d5JTIwYmFubmVyfGVufDF8fHx8MTc1ODc2Mjc5M3ww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+                  src="/src/images/banner.jpg"
                   alt="数字市场平台"
                   className="w-full h-full object-cover"
                 />
