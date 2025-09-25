@@ -1,4 +1,4 @@
-import { Star, Download, Heart, Eye, Tag, Clock } from 'lucide-react'
+import { Star, Download, Heart, Eye, Tag } from 'lucide-react'
 import { Card, CardContent, CardFooter, CardHeader } from './ui/card'
 import { Badge } from './ui/badge'
 import { Button } from './ui/button'
@@ -140,7 +140,8 @@ export function ResourceCard({ resource, onView }: ResourceCardProps) {
             </div>
           </div>
 
-          <div className="flex items-center space-x-2">
+          <div className="flex items-center space-x-3">
+            <span className="text-xs text-muted-foreground">{uploadDate}</span>
             <Button 
               variant="ghost" 
               size="icon" 
@@ -149,13 +150,6 @@ export function ResourceCard({ resource, onView }: ResourceCardProps) {
             >
               <Heart className="h-4 w-4" />
             </Button>
-          </div>
-        </div>
-
-        <div className="flex items-center justify-between w-full mt-2 pt-2 border-t text-xs text-muted-foreground">
-          <div className="flex items-center space-x-1">
-            <Clock className="h-3 w-3" />
-            <span>{uploadDate}</span>
           </div>
         </div>
       </CardFooter>
