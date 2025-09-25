@@ -96,7 +96,7 @@ const officialResources = [
     views: 5200,
     uploadDate: '3天前',
     version: '1.2.0',
-    thumbnail: '/src/images/coding-workflow.jpg'
+    thumbnail: '/src/images/AI2.jpg'
   }
 ]
 
@@ -113,7 +113,7 @@ const popularResources = [
     views: 9800,
     uploadDate: '1周前',
     version: '1.8.0',
-    thumbnail: '/src/images/coding-workflow.jpg'
+    thumbnail: '/src/images/AI1.jpg'
   },
   {
     id: 'popular-2',
@@ -141,7 +141,7 @@ const popularResources = [
     views: 7500,
     uploadDate: '5天前',
     version: '3.2.0',
-    thumbnail: '/src/images/data-analytics.jpg'
+    thumbnail: '/src/images/BI.jpg'
   }
 ]
 
@@ -158,7 +158,7 @@ const recentResources = [
     views: 1200,
     uploadDate: '1天前',
     version: '1.0.5',
-    thumbnail: '/src/images/computer.jpg'
+    thumbnail: '/src/images/AI3.jpg'
   },
   {
     id: '5',
@@ -261,11 +261,12 @@ export function HomePage({ setCurrentPage }: HomePageProps) {
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {featuredResources.map((resource) => (
-              <ResourceCard
-                key={resource.id}
-                resource={resource}
-                onView={(id) => setCurrentPage('detail')}
-              />
+              <div key={resource.id}>
+                <ResourceCard
+                  resource={resource}
+                  onView={(id) => setCurrentPage('detail')}
+                />
+              </div>
             ))}
           </div>
         </div>
@@ -287,11 +288,12 @@ export function HomePage({ setCurrentPage }: HomePageProps) {
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {officialResources.map((resource) => (
-              <ResourceCard
-                key={resource.id}
-                resource={resource}
-                onView={(id) => setCurrentPage('detail')}
-              />
+              <div key={resource.id}>
+                <ResourceCard
+                  resource={resource}
+                  onView={(id) => setCurrentPage('detail')}
+                />
+              </div>
             ))}
           </div>
         </div>
@@ -313,11 +315,12 @@ export function HomePage({ setCurrentPage }: HomePageProps) {
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {popularResources.map((resource) => (
-              <ResourceCard
-                key={resource.id}
-                resource={resource}
-                onView={(id) => setCurrentPage('detail')}
-              />
+              <div key={resource.id}>
+                <ResourceCard
+                  resource={resource}
+                  onView={(id) => setCurrentPage('detail')}
+                />
+              </div>
             ))}
           </div>
         </div>
@@ -339,11 +342,12 @@ export function HomePage({ setCurrentPage }: HomePageProps) {
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {recentResources.map((resource) => (
-              <ResourceCard
-                key={resource.id}
-                resource={resource}
-                onView={(id) => setCurrentPage('detail')}
-              />
+              <div key={resource.id}>
+                <ResourceCard
+                  resource={resource}
+                  onView={(id) => setCurrentPage('detail')}
+                />
+              </div>
             ))}
           </div>
         </div>

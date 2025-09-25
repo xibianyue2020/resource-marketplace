@@ -63,7 +63,8 @@ const myResources = [
     isFeatured: true,
     uploadDate: '2天前',
     version: '2.1.0',
-    status: 'published'
+    status: 'published',
+    thumbnail: '/src/images/AI.jpg'
   },
   {
     id: '2',
@@ -77,7 +78,8 @@ const myResources = [
     views: 1200,
     uploadDate: '1天前',
     version: '1.0.5',
-    status: 'published'
+    status: 'published',
+    thumbnail: '/src/images/coding-workflow.jpg'
   },
   {
     id: '3',
@@ -91,7 +93,8 @@ const myResources = [
     views: 0,
     uploadDate: '刚刚',
     version: '1.0.0',
-    status: 'pending'
+    status: 'pending',
+    thumbnail: '/src/images/data-analytics.jpg'
   }
 ]
 
@@ -109,7 +112,7 @@ const favoriteResources = [
     uploadDate: '1周前',
     version: '3.2.1',
     favoriteDate: '3天前',
-    thumbnail: '/src/images/data-analytics.jpg'
+    thumbnail: '/src/images/BI.jpg'
   },
   {
     id: '102',
@@ -124,7 +127,7 @@ const favoriteResources = [
     uploadDate: '3天前',
     version: '2.0.3',
     favoriteDate: '2天前',
-    thumbnail: '/src/images/AI.jpg'
+    thumbnail: '/src/images/AI4.jpg'
   },
   {
     id: '103',
@@ -154,7 +157,7 @@ const favoriteResources = [
     uploadDate: '1周前',
     version: '2.1.0',
     favoriteDate: '5天前',
-    thumbnail: '/src/images/computer.jpg'
+    thumbnail: '/src/images/AI5.jpg'
   },
   {
     id: '105',
@@ -169,7 +172,7 @@ const favoriteResources = [
     uploadDate: '4天前',
     version: '1.8.3',
     favoriteDate: '6天前',
-    thumbnail: '/src/images/creative-design.jpg'
+    thumbnail: '/src/images/AI6.jpg'
   }
 ]
 
@@ -408,17 +411,6 @@ export function UserProfile({ setCurrentPage }: UserProfileProps) {
                       <Badge variant="secondary" className="text-xs">
                         {resource.favoriteDate} 收藏
                       </Badge>
-                      <Button
-                        variant="ghost"
-                        size="icon"
-                        className="h-6 w-6 bg-white/80 hover:bg-white/90 dark:bg-black/80 dark:hover:bg-black/90"
-                        onClick={(e) => {
-                          e.stopPropagation()
-                          // 取消收藏逻辑
-                        }}
-                      >
-                        <Heart className="h-3 w-3 fill-red-500 text-red-500" />
-                      </Button>
                     </div>
                   </div>
                 ))}
