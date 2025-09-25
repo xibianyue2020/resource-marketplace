@@ -358,7 +358,7 @@ export function HomePage({ setCurrentPage }: HomePageProps) {
               <Button 
                 size="lg" 
                 variant="outline" 
-                className="border-white text-white hover:bg-white hover:text-primary"
+                className="border-white hover:bg-white hover:text-primary"
                 onClick={() => setCurrentPage('community')}
               >
                 加入社区
