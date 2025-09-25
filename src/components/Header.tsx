@@ -86,7 +86,12 @@ export function Header({ currentPage, setCurrentPage, isDark, setIsDark }: Heade
           </Button>
 
           {/* Notifications */}
-          <Button variant="ghost" size="icon" className="relative h-9 w-9">
+          <Button 
+            variant="ghost" 
+            size="icon" 
+            className="relative h-9 w-9"
+            onClick={() => setCurrentPage('notifications')}
+          >
             <Bell className="h-4 w-4" />
             <Badge className="absolute -top-1 -right-1 h-5 w-5 rounded-full p-0 text-xs">
               3

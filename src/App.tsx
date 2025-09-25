@@ -7,6 +7,7 @@ import { UploadResource } from './components/UploadResource'
 import { UserProfile } from './components/UserProfile'
 import { Community } from './components/Community'
 import { AdminPanel } from './components/AdminPanel'
+import { Notifications } from './components/Notifications'
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState('home')
@@ -52,6 +53,8 @@ export default function App() {
         return <Community setCurrentPage={setCurrentPage} />
       case 'admin':
         return <AdminPanel setCurrentPage={setCurrentPage} />
+      case 'notifications':
+        return <Notifications setCurrentPage={setCurrentPage} />
       default:
         return <HomePage setCurrentPage={setCurrentPage} />
     }
