@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { 
   Star, Download, Heart, Eye, Tag, Clock, User, 
   ThumbsUp, MessageCircle, Flag, ChevronDown, ChevronUp,
-  Share2, BookOpen, Settings, GitBranch 
+  Share2, BookOpen, Settings, GitBranch, Home, Layout 
 } from 'lucide-react'
 import { Button } from './ui/button'
 import { Badge } from './ui/badge'
@@ -129,6 +129,31 @@ export function ResourceDetail({ setCurrentPage }: ResourceDetailProps) {
   return (
     <div className="min-h-screen bg-background">
       <div className="container mx-auto px-4 py-8">
+        {/* 面包屑导航 */}
+        <nav className="flex items-center space-x-2 text-sm text-muted-foreground mb-6">
+          <Button 
+            variant="ghost" 
+            size="sm" 
+            className="h-8 px-2 hover:text-foreground"
+            onClick={() => setCurrentPage('home')}
+          >
+            <Home className="h-4 w-4 mr-1" />
+            首页
+          </Button>
+          <span>/</span>
+          <Button 
+            variant="ghost" 
+            size="sm" 
+            className="h-8 px-2 hover:text-foreground"
+            onClick={() => setCurrentPage('browse')}
+          >
+            <Layout className="h-4 w-4 mr-1" />
+            资源市场
+          </Button>
+          <span>/</span>
+          <span className="text-foreground font-medium">{mockResource.title}</span>
+        </nav>
+
         <div className="grid lg:grid-cols-3 gap-8">
           {/* Main Content */}
           <div className="lg:col-span-2 space-y-8">
