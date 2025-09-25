@@ -22,8 +22,7 @@ export function Header({ currentPage, setCurrentPage, isDark, setIsDark }: Heade
   const navigation = [
     { name: '首页', id: 'home' },
     { name: '资源市场', id: 'browse' },
-    { name: '社区', id: 'community' },
-    { name: '排行榜', id: 'leaderboard' },
+    { name: '社区', id: 'community' }
   ]
 
   return (
