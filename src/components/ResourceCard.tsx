@@ -27,6 +27,7 @@ interface ResourceCardProps {
 
 export function ResourceCard({ resource, onView }: ResourceCardProps) {
   const {
+    id,
     title,
     description,
     author,
@@ -42,8 +43,20 @@ export function ResourceCard({ resource, onView }: ResourceCardProps) {
     version
   } = resource
 
+  const handleCardClick = () => {
+    onView?.(id)
+  }
+
+  const handleHeartClick = (e: React.MouseEvent) => {
+    e.stopPropagation() // 防止点击收藏按钮时触发卡片点击
+    // 这里可以添加收藏逻辑
+  }
+
   return (
-    <Card className="group cursor-pointer hover:shadow-lg transition-all duration-200 hover:border-primary/20">
+    <Card 
+      className="group cursor-pointer hover:shadow-lg transition-all duration-200 hover:border-primary/20"
+      onClick={handleCardClick}
+    >
       <CardHeader className="p-0">
         <div className="relative overflow-hidden rounded-t-lg bg-gradient-to-br from-blue-50 to-purple-50 dark:from-blue-950/20 dark:to-purple-950/20">
           {thumbnail ? (
@@ -128,15 +141,13 @@ export function ResourceCard({ resource, onView }: ResourceCardProps) {
           </div>
 
           <div className="flex items-center space-x-2">
-            <Button variant="ghost" size="icon" className="h-8 w-8">
-              <Heart className="h-4 w-4" />
-            </Button>
             <Button 
-              size="sm" 
-              onClick={() => onView?.(resource.id)}
-              className="h-8"
+              variant="ghost" 
+              size="icon" 
+              className="h-8 w-8 hover:bg-transparent"
+              onClick={handleHeartClick}
             >
-              查看详情
+              <Heart className="h-4 w-4" />
             </Button>
           </div>
         </div>
