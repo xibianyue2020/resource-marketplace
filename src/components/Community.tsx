@@ -30,11 +30,11 @@ const leaderboards = {
     { rank: 5, title: '营销文案生成器', author: '营销专家', downloads: 2900, rating: 4.5, category: 'Prompt' }
   ],
   nodes: [
-    { rank: 1, name: '南京节点', syncCount: 1250, uptime: 99.9, lastSync: '2分钟前', status: 'healthy' },
-    { rank: 2, name: '上海节点', syncCount: 1180, uptime: 99.7, lastSync: '3分钟前', status: 'healthy' },
-    { rank: 3, name: '深圳节点', syncCount: 950, uptime: 98.8, lastSync: '5分钟前', status: 'warning' },
-    { rank: 4, name: '广州节点', syncCount: 840, uptime: 99.2, lastSync: '1分钟前', status: 'healthy' },
-    { rank: 5, name: '杭州节点', syncCount: 720, uptime: 97.5, lastSync: '10分钟前', status: 'error' }
+    { rank: 1, name: '南京节点', syncCount: 1250, uptime: 5.0, lastSync: '2分钟前', status: 'healthy' },
+    { rank: 2, name: '上海节点', syncCount: 1180, uptime: 4.9, lastSync: '3分钟前', status: 'healthy' },
+    { rank: 3, name: '深圳节点', syncCount: 950, uptime: 4.8, lastSync: '5分钟前', status: 'warning' },
+    { rank: 4, name: '广州节点', syncCount: 840, uptime: 4.9, lastSync: '1分钟前', status: 'healthy' },
+    { rank: 5, name: '杭州节点', syncCount: 720, uptime: 4.8, lastSync: '10分钟前', status: 'error' }
   ]
 }
 
@@ -112,6 +112,13 @@ export function Community({ setCurrentPage }: CommunityProps) {
           </Card>
           <Card>
             <CardContent className="p-6 text-center">
+              <Zap className="h-8 w-8 text-purple-500 mx-auto mb-2" />
+              <div className="text-2xl">2,250</div>
+              <div className="text-sm text-muted-foreground">资源总数</div>
+            </CardContent>
+          </Card>
+          <Card>
+            <CardContent className="p-6 text-center">
               <Download className="h-8 w-8 text-green-500 mx-auto mb-2" />
               <div className="text-2xl">156,890</div>
               <div className="text-sm text-muted-foreground">总下载量</div>
@@ -122,13 +129,6 @@ export function Community({ setCurrentPage }: CommunityProps) {
               <Star className="h-8 w-8 text-yellow-500 mx-auto mb-2" />
               <div className="text-2xl">4.8</div>
               <div className="text-sm text-muted-foreground">平均评分</div>
-            </CardContent>
-          </Card>
-          <Card>
-            <CardContent className="p-6 text-center">
-              <Zap className="h-8 w-8 text-purple-500 mx-auto mb-2" />
-              <div className="text-2xl">1,250</div>
-              <div className="text-sm text-muted-foreground">我的积分</div>
             </CardContent>
           </Card>
         </div>
@@ -260,11 +260,11 @@ export function Community({ setCurrentPage }: CommunityProps) {
                         <div className="flex items-center space-x-6 text-sm text-muted-foreground">
                           <div className="text-center">
                             <div className="text-lg text-foreground">{node.syncCount}</div>
-                            <div>同步次数</div>
+                            <div>资源个数</div>
                           </div>
                           <div className="text-center">
-                            <div className="text-lg text-foreground">{node.uptime}%</div>
-                            <div>可用性</div>
+                            <div className="text-lg text-foreground">{node.uptime}</div>
+                            <div>平均评分</div>
                           </div>
                         </div>
                       </div>
