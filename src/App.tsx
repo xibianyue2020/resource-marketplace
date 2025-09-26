@@ -77,7 +77,7 @@ export default function App() {
         <div className="container mx-auto px-4 py-8">
           <div className="grid md:grid-cols-4 gap-8">
             <div>
-              <h3 className="text-lg mb-4">ResourceHub</h3>
+              <h3 className="text-lg mb-4">AI-ResourceHub</h3>
               <p className="text-sm text-muted-foreground">
                 专业的AI资源市场平台，为开发者提供优质的工具和模板。
               </p>
@@ -112,7 +112,7 @@ export default function App() {
           </div>
           <div className="border-t mt-8 pt-8 flex items-center justify-between">
             <p className="text-sm text-muted-foreground">
-              © 2024 ResourceHub. 保留所有权利。
+              © 2024 AI-ResourceHub. 保留所有权利。
             </p>
             <div className="flex items-center space-x-4">
               <button 

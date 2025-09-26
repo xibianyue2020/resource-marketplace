@@ -33,7 +33,7 @@ export function Header({ currentPage, setCurrentPage, isDark, setIsDark }: Heade
           <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-blue-600 to-purple-600">
             <Zap className="h-5 w-5 text-white" />
           </div>
-          <span className="text-xl tracking-tight">ResourceHub</span>
+          <span className="text-xl tracking-tight">AI-ResourceHub</span>
         </div>
 
         {/* Navigation */}
