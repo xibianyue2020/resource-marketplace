@@ -35,7 +35,6 @@ const mockResource = {
   lastUpdate: '2024-01-20',
   version: '2.1.0',
   fileSize: '2.3 MB',
-  license: 'MIT',
   thumbnail: '/src/images/computer.jpg',
   features: [
     '智能意图识别',
@@ -495,10 +494,6 @@ export function ResourceDetail({ setCurrentPage }: ResourceDetailProps) {
                 <div className="flex justify-between">
                   <span className="text-sm text-muted-foreground">文件大小</span>
                   <span className="text-sm">{mockResource.fileSize}</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-sm text-muted-foreground">许可证</span>
-                  <span className="text-sm">{mockResource.license}</span>
                 </div>
                 <div className="flex justify-between">
                   <span className="text-sm text-muted-foreground">最后更新</span>

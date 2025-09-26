@@ -37,7 +37,6 @@ export function UploadResource({ setCurrentPage }: UploadResourceProps) {
     category: '',
     tags: [] as string[],
     version: '1.0.0',
-    license: 'MIT',
     file: null as File | null,
     icon: null as File | null
   })
@@ -394,22 +393,6 @@ export function UploadResource({ setCurrentPage }: UploadResourceProps) {
                           placeholder="1.0.0"
                           className="mt-1"
                         />
-                      </div>
-                      
-                      <div>
-                        <label className="text-sm">许可证</label>
-                        <Select value={formData.license} onValueChange={(value) => setFormData(prev => ({ ...prev, license: value }))}>
-                          <SelectTrigger className="mt-1">
-                            <SelectValue />
-                          </SelectTrigger>
-                          <SelectContent>
-                            <SelectItem value="MIT">MIT</SelectItem>
-                            <SelectItem value="Apache-2.0">Apache 2.0</SelectItem>
-                            <SelectItem value="GPL-3.0">GPL 3.0</SelectItem>
-                            <SelectItem value="BSD-3-Clause">BSD 3-Clause</SelectItem>
-                            <SelectItem value="Custom">自定义</SelectItem>
-                          </SelectContent>
-                        </Select>
                       </div>
                     </div>
 
