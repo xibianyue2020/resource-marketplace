@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { 
   Star, Download, Heart, Eye, Tag, Clock, User, 
   ThumbsUp, MessageCircle, Flag, ChevronDown, ChevronUp,
-  Share2, BookOpen, Settings, GitBranch, Home, Layout 
+  Share2, BookOpen, Settings, GitBranch, Home, Layout, Play 
 } from 'lucide-react'
 import { Button } from './ui/button'
 import { Badge } from './ui/badge'
@@ -453,7 +453,12 @@ export function ResourceDetail({ setCurrentPage }: ResourceDetailProps) {
                 <div className="space-y-4">
                   <Button size="lg" className="w-full">
                     <Download className="mr-2 h-4 w-4" />
-                    立即下载
+                    立即拉取
+                  </Button>
+                  
+                  <Button variant="secondary" size="lg" className="w-full">
+                    <Play className="mr-2 h-4 w-4" />
+                    试运行
                   </Button>
                   
                   <div className="flex space-x-2">
