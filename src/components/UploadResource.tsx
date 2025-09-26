@@ -279,15 +279,14 @@ export function UploadResource({ setCurrentPage }: UploadResourceProps) {
                         
                         <div>
                           <label className="text-sm text-muted-foreground">描述</label>
-                          <div className="mt-1">
-                            <p className="text-sm line-clamp-3">{aiSuggestions.description}</p>
+                          <div className="flex items-center justify-between mt-1">
+                            <p className="text-sm line-clamp-3 flex-1 mr-2">{aiSuggestions.description}</p>
                             <Button
                               size="sm"
                               variant="outline"
-                              className="mt-2"
                               onClick={() => applySuggestion('description', aiSuggestions.description)}
                             >
-                              采用描述
+                              采用
                             </Button>
                           </div>
                         </div>
@@ -308,19 +307,20 @@ export function UploadResource({ setCurrentPage }: UploadResourceProps) {
                         
                         <div>
                           <label className="text-sm text-muted-foreground">建议标签</label>
-                          <div className="flex flex-wrap gap-1 mt-1">
-                            {aiSuggestions.tags.map((tag) => (
-                              <Badge key={tag} variant="outline">{tag}</Badge>
-                            ))}
+                          <div className="flex items-center justify-between mt-1">
+                            <div className="flex flex-wrap gap-1 flex-1 mr-2">
+                              {aiSuggestions.tags.map((tag) => (
+                                <Badge key={tag} variant="outline">{tag}</Badge>
+                              ))}
+                            </div>
+                            <Button
+                              size="sm"
+                              variant="outline"
+                              onClick={() => applySuggestion('tags', aiSuggestions.tags)}
+                            >
+                              采用
+                            </Button>
                           </div>
-                          <Button
-                            size="sm"
-                            variant="outline"
-                            className="mt-2"
-                            onClick={() => applySuggestion('tags', aiSuggestions.tags)}
-                          >
-                            采用标签
-                          </Button>
                         </div>
                       </CardContent>
                     </Card>
